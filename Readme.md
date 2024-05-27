@@ -1,7 +1,8 @@
 # Личный проект «Седона»
 
-* Студент: [Elizaveta Chudesnova](https://up.htmlacademy.ru/htmlcss/40/user/2531899).
-* Наставник: [Анна Лисененкова](https://htmlacademy.ru/profile/ankhena).
+* Студент: [Elizaveta Chudesnova](https://up.htmlacademy.ru/htmlcss/40/user/2531899)
+* Наставник: [Анна Лисененкова](https://htmlacademy.ru/profile/ankhena)
+* Сайт: [Мой учебный проект "Седона"](https://calmowl.github.io/2531899-sedona-40/)
 
 ---
 
