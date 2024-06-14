@@ -23,6 +23,7 @@ body {
   background-color: #F2F2F2;
   color: #000000;
   width: 1200px;
+  margin: 0 auto;
 }
 
 .main-index,
@@ -35,7 +36,9 @@ body {
 .button,
 .subscribe button,
 .subscribe-index button,
-.pagination-link {
+.pagination-link,
+.catalog-filter button {
+  font-family: 'PT Sans', 'Arial', sans-serif;
   font-weight: 700;
   font-size: 20px;
   line-height: 36px;
@@ -43,9 +46,12 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   text-align: center;
+  border: none;
 }
 
-.button.navigation-link {
+.button.navigation-link,
+.catalog-filter button {
+  font-family: 'PT Sans', 'Arial', sans-serif;
   font-size: 16px;
   line-height: 20px;
   color: #ffffff;
@@ -56,9 +62,15 @@ body {
 }
 
 .subscribe button,
-.subscribe-index button {
+.subscribe-index button,
+.catalog-filter button {
   background-color: #82B3D3;
 }
+
+button[type="reset"] {
+  background: transparent;
+}
+
 
 .navigation-list {
   list-style: none;
@@ -161,6 +173,12 @@ body {
   text-align: center;
 }
 
+.subscribe-form input::placeholder {
+  font-family: 'PT Sans', 'Arial', sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .container {
   padding: 35px 70px 70px 70px;
   background-image: url("../images/filter-background.jpg");
@@ -198,9 +216,20 @@ body {
   line-height: 24px;
 }
 
+.catalog-filter-title input {
+  font-size: 40px;
+}
+
 .catalog-filter-item label {
   font-size: 18px;
   line-height: 23px;
+}
+
+.catalog-filter-group input[type="number"] {
+  font-family: 'PT Sans', 'Arial', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .catalog h2 {
@@ -234,6 +263,7 @@ body {
 .product-card p + a,
 .favourite,
 .rating {
+  font-family: 'PT Sans', 'Arial', sans-serif;
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
@@ -247,6 +277,7 @@ body {
 }
 
 .favourite {
+  border: none;
   background-color: #82B3D3;
 }
 
