@@ -14,6 +14,10 @@
   font-display: swap;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   font-family: 'PT Sans', 'Arial', sans-serif;
   font-style: normal;
@@ -22,15 +26,21 @@ body {
   line-height: 26px;
   background-color: #F2F2F2;
   color: #000000;
-  width: 1200px;
   margin: 0 auto;
+  height: 100%;
 }
 
-.main-index,
-.main-inner,
-.page-header,
-.page-footer {
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  width: 1200px;
+  margin: 0 auto;
   background-color: #ffffff;
+}
+
+.main-container {
+  flex-grow: 1;
 }
 
 .button,
@@ -38,7 +48,7 @@ body {
 .subscribe-index button,
 .pagination-link,
 .catalog-filter button {
-  font-family: 'PT Sans', 'Arial', sans-serif;
+  font-family: inherit;
   font-weight: 700;
   font-size: 20px;
   line-height: 36px;
@@ -51,7 +61,7 @@ body {
 
 .button.navigation-link,
 .catalog-filter button {
-  font-family: 'PT Sans', 'Arial', sans-serif;
+  font-family: inherit;
   font-size: 16px;
   line-height: 20px;
   color: #ffffff;
@@ -71,9 +81,24 @@ button[type="reset"] {
   background: transparent;
 }
 
+.navigation {
+  display: flex;
+  padding: 0 70px;
+}
+
+.logo {
+  margin-right: 30px;
+}
 
 .navigation-list {
   list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-right: auto;
+}
+
+.user-menu-list {
+  margin: 0;
 }
 
 .navigation-link {
@@ -128,6 +153,11 @@ button[type="reset"] {
 
 .advantages-list,
 .benefits-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   text-align: center;
   font-size: 18px;
   line-height: 21px;
@@ -145,17 +175,31 @@ button[type="reset"] {
 }
 
 .advantages-item {
+  width: 400px;
   background-color: #82B3D3;
+}
+
+.advantages-item-big {
+  width: 100%;
+}
+
+.benefits-item {
+  width: 400px;
 }
 
 .advantages-item:nth-child(2),
 .advantages-item:nth-child(4),
 .benefits-item:nth-child(odd) {
-  background: #83B3D31F;
+  background: rgba(131, 179, 211, 0.12);
+  ;
 }
 
 .advantages-item:nth-child(3) {
-  background: #83B3D333;
+  background: rgba(131, 179, 211, 0.2);
+}
+
+.search {
+  text-align: center;
 }
 
 .subscribe-index h2,
@@ -179,6 +223,13 @@ button[type="reset"] {
   line-height: 24px;
 }
 
+.page-footer-container {
+  display: flex;
+  padding: 0 70px;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .container {
   padding: 35px 70px 70px 70px;
   background-image: url("../images/filter-background.jpg");
@@ -198,6 +249,20 @@ button[type="reset"] {
 .breadcrumbs-link {
   font-size: 16px;
   line-height: 21px;
+}
+
+.catalog-filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.catalog-filter-group {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  border: none;
 }
 
 .catalog-filter-list {
@@ -226,10 +291,30 @@ button[type="reset"] {
 }
 
 .catalog-filter-group input[type="number"] {
-  font-family: 'PT Sans', 'Arial', sans-serif;
+  font-family: inherit;
   font-weight: 700;
   font-size: 18px;
   line-height: 24px;
+}
+
+.catalog-header {
+  display: flex;
+  margin: 0 70px;
+  padding: 0;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.catalog-search-results {
+  display: flex;
+  margin: 0 70px;
+  padding: 0;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.view {
+  width: 48px;
 }
 
 .catalog h2 {
@@ -246,12 +331,18 @@ button[type="reset"] {
   color: #333333;
 }
 
-.catalog ul {
-  list-style: none;
+.product-card {
+  box-sizing: border-box;
+  border: 1px solid #E6E6E6;
+  width: 340px;
+  padding: 20px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  text-align: center;
 }
 
-.product-card {
-  border: 1px solid #E6E6E6;
+.product-card:nth-child(3n) {
+  margin-right: 0;
 }
 
 .product-card-title {
@@ -263,7 +354,7 @@ button[type="reset"] {
 .product-card p + a,
 .favourite,
 .rating {
-  font-family: 'PT Sans', 'Arial', sans-serif;
+  font-family: inherit;
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
@@ -290,7 +381,16 @@ button[type="reset"] {
 }
 
 .pagination-list {
+  display: flex;
   list-style: none;
+}
+
+.pagination-item {
+  width: 60px;
+  background-color: #82B3D3;
+  border-radius: 4px;
+  margin-right: 8px;
+  text-align: center;
 }
 
 .pagination-link {
