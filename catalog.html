@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>Каталог гостиниц | HTML Academy: Седона</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" href="favicon.ico" sizes="32x32">
   </head>
 
   <body>
@@ -38,7 +39,7 @@
               </a>
             </li>
             <li class="navigation-item">
-              <a class="navigation-link button" href="#">Хочу сюда!</a>
+              <a class="navigation-link button brown-button" href="#">Хочу сюда!</a>
             </li>
           </ul>
         </nav>
@@ -49,7 +50,7 @@
           <h1 class="inner-title">Гостиницы Седоны</h1>
           <ul class="breadcrumbs">
             <li class="breadcrumbs-item">
-              <a class="breadcrumbs-link" href="index.html">
+              <a class="breadcrumbs-link homepage" href="index.html">
                 <span class="visually-hidden">Главная</span>
               </a>
             </li>
@@ -108,19 +109,21 @@
               </fieldset>
               <fieldset class="catalog-filter-group price-filter">
                 <legend class="catalog-filter-title">Стоимость, ₽:</legend>
-                <label>
-                  от
-                  <input type="number" name="price-min" id="price-min" placeholder="0" value="0">
-                </label>
-                <label>
-                  до
-                  <input type="number" name="price-max" id="price-max" placeholder="9000" value="9000">
-                </label>
+                <div class="price-filter-wrapper">
+                  <label>
+                    от
+                    <input type="number" name="price-min" id="price-min" placeholder="0" value="0" min="0">
+                  </label>
+                  <label>
+                    до
+                    <input type="number" name="price-max" id="price-max" placeholder="9000" value="9000">
+                  </label>
+                </div>
                 <input type="range" name="price-range" id="price-range">
               </fieldset>
               <div class="catalog-filter-group">
-                <button type="submit">Применить</button>
-                <button type="reset">Сбросить</button>
+                <button class="button blue-button" type="submit">Применить</button>
+                <button class="button" type="reset">Сбросить</button>
               </div>
             </form>
           </section>
@@ -156,8 +159,8 @@
               </a>
               <p>Гостиница</p>
               <p class="price">От 4000 ₽</p>
-              <a href="#">Подробнее</a>
-              <button class="favourite" type="button">В избранное</button>
+              <a class="button brown-button" href="#">Подробнее</a>
+              <button class="button blue-button favourite" type="button">В избранное</button>
               <p class="hotel-class four-stars">
                 <span class="visually-hidden">Комфортность 4 звезды</span>
               </p>
@@ -173,8 +176,8 @@
               </a>
               <p>Гостиница</p>
               <p class="price">От 5000 ₽</p>
-              <a href="#">Подробнее</a>
-              <button class="favourite in-favourites" type="button">В избранном</button>
+              <a class="button brown-button" href="#">Подробнее</a>
+              <button class="button favourite in-favourites" type="button">В избранном</button>
               <p class="hotel-class four-stars">
                 <span class="visually-hidden">Комфортность 4 звезды</span>
               </p>
@@ -190,8 +193,8 @@
               </a>
               <p>Гостиница</p>
               <p class="price">От 2500 ₽</p>
-              <a href="#">Подробнее</a>
-              <button class="favourite" type="button">В избранное</button>
+              <a class="button brown-button" href="#">Подробнее</a>
+              <button class="button blue-button favourite" type="button">В избранное</button>
               <p class="hotel-class three-stars">
                 <span class="visually-hidden">Комфортность 3 звезды</span>
               </p>
@@ -207,8 +210,8 @@
               </a>
               <p>Гостиница</p>
               <p class="price">От 1500 ₽</p>
-              <a href="#">Подробнее</a>
-              <button class="favourite" type="button">В избранное</button>
+              <a class="button brown-button" href="#">Подробнее</a>
+              <button class="button blue-button favourite" type="button">В избранное</button>
               <p class="hotel-class two-stars">
                 <span class="visually-hidden">Комфортность 2 звезды</span>
               </p>
@@ -220,22 +223,22 @@
           <h2 class="visually-hidden">Переход к другим страницам каталога</h2>
           <ul class="pagination-list">
             <li class="pagination-item page-current">
-              <a class="pagination-link page-current" href="#">1</a>
+              <a class="button pagination-link page-current" href="#">1</a>
             </li>
             <li class="pagination-item">
-              <a class="pagination-link" href="#">2</a>
+              <a class="button pagination-link" href="#">2</a>
             </li>
             <li class="pagination-item">
-              <a class="pagination-link" href="#">3</a>
+              <a class="button pagination-link" href="#">3</a>
             </li>
             <li class="pagination-item">
-              <a class="pagination-link" href="#">4</a>
+              <a class="button pagination-link" href="#">4</a>
             </li>
             <li class="pagination-item pagination-more">
-              <a class="pagination-link pagination-more" href="#">...</a>
+              <a class="button pagination-link pagination-more" href="#">...</a>
             </li>
             <li class="pagination-item">
-              <a class="pagination-link" href="#">10</a>
+              <a class="button pagination-link" href="#">10</a>
             </li>
           </ul>
         </section>
@@ -247,7 +250,7 @@
               <span class="visually-hidden">Ваш e-mail</span>
               <input type="email" name="email" placeholder="Ваш e-mail">
             </label>
-            <button type="submit">Подписаться</button>
+            <button class="button blue-button" type="submit">Подписаться</button>
           </form>
         </section>
       </main>
