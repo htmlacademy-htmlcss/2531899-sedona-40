@@ -157,7 +157,7 @@ button[type="reset"]:active {
 .user-menu-list {
   margin-left: auto;
   justify-content: flex-end;
-  align-items: center;
+  vertical-align: top;
 }
 
 .user-menu-list .navigation-link {
@@ -193,15 +193,17 @@ button[type="reset"]:active {
 
 .button.navigation-link {
   padding: 8px 34px;
+  margin-top: 14px;
   margin-left: 20px;
 }
 
-.navigation-link-current::before {
+.navigation-link-current::after {
   content: "";
   position: absolute;
   width: calc(100% - 32px);
   border-bottom: 2px solid #756257;
   bottom: 5px;
+  left: 16px;
 }
 
 .favourites {
@@ -250,6 +252,7 @@ button[type="reset"]:active {
 
 .advantages-header {
   padding: 69px 270px;
+  margin-bottom: 21px;
 }
 
 .benefits-header {
@@ -301,6 +304,10 @@ button[type="reset"]:active {
   border-bottom: 2px solid rgba(0, 0, 0, 0.3);
   display: block;
   margin: 30px auto 0;
+}
+
+.advantages-item-big .advantages-title::after {
+  border-bottom-color: rgba(255, 255, 255, 0.3);
 }
 
 .benefits-title {
@@ -441,33 +448,65 @@ button[type="reset"]:active {
   ;
 }
 
-.footer-social-item {
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
 .footer-social-item a {
   display: block;
   width: 47px;
   height: 40px;
+  position: relative;
 }
 
-.footer-social-item:nth-child(1) {
-  background-image: url(../images/social-icon-vk.svg);
+.footer-navigation-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  fill: #83B3D3;
 }
 
-.footer-social-item:nth-child(2) {
-  background-image: url(../images/social-icon-telegram.svg);
+.footer-navigation-icon:hover,
+.footer-navigation-icon:focus {
+  fill: #68A2CA;
 }
 
-.footer-social-item:nth-child(3) {
-  background-image: url(../images/social-icon-youtube.svg);
+.footer-navigation-icon:active {
+  fill: rgba(104, 162, 202, 0.3);
+}
+
+
+.developer-icon {
+  fill: #000000;
+}
+
+.developer-icon:hover,
+.developer-icon:focus {
+  fill: #756157;
+}
+
+.developer-icon:active {
+  fill: rgba(117, 97, 87, 0.3);
+}
+
+.contacts a {
+  font-size: 40px;
+  line-height: 40px;
+  text-decoration: none;
+  color: #000000;
+}
+
+.contacts a:hover,
+.contacts a:focus {
+  color: #756157;
+}
+
+.contacts a:active {
+  color: rgba(117, 97, 87, 0.3);
 }
 
 .container {
   padding: 35px 70px 70px 70px;
   margin: 0;
-  margin-bottom: 50px;
   background-image: url("../images/filter-background.jpg");
   background-color: #5abaf7;
   background-repeat: no-repeat;
@@ -489,6 +528,20 @@ button[type="reset"]:active {
   padding: 0;
   margin-bottom: 40px;
   display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.breadcrumbs-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.breadcrumbs-link {
+  font-size: 16px;
+  line-height: 21px;
+  display: block;
 }
 
 .homepage {
@@ -496,14 +549,18 @@ button[type="reset"]:active {
   background-repeat: no-repeat;
   background-position: center;
   display: block;
-  width: 12px;
-  height: 12px;
-  padding: 3px;
+  width: 13px;
+  height: 15px;
 }
 
-.breadcrumbs-link {
-  font-size: 16px;
-  line-height: 21px;
+.breadcrumbs-item:not(:last-child)::after {
+  content: '';
+  display: block;
+  width: 7px;
+  height: 10px;
+  background-image: url(../images/breadcrumbs-arrow.svg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .catalog-filter {
@@ -617,8 +674,7 @@ input[type="range"] {
 
 .catalog-header {
   display: flex;
-  margin: 0 70px;
-  margin-bottom: 40px;
+  margin: 50px 70px 40px 70px;
   gap: 70px;
   align-items: center;
 }
@@ -636,6 +692,7 @@ input[type="range"] {
 .catalog-header select:hover {
   border-color: #68A2CA;
 }
+
 .catalog-header select:disabled {
   border-color: rgba(0, 0, 0, 0.3);
   color: rgba(0, 0, 0, 0.3);
@@ -874,20 +931,4 @@ input[type="range"] {
   line-height: 26px;
   color: #000000;
   background-color: #ffffff;
-}
-
-.contacts a {
-  font-size: 40px;
-  line-height: 40px;
-  text-decoration: none;
-  color: #000000;
-}
-
-.contacts a:hover,
-.contacts a:focus {
-  color: #756157;
-}
-
-.contacts a:active {
-  color: rgba(117, 97, 87, 0.3);
 }
