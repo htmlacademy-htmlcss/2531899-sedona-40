@@ -116,7 +116,7 @@
           <form class="subscribe-form" action="https://echo.htmlacademy.ru/" method="post">
             <label>
               <span class="visually-hidden">Ваш e-mail</span>
-              <input type="email" name="email" placeholder="Ваш e-mail">
+              <input type="email" name="email" placeholder="Ваш e-mail" required>
             </label>
             <button class="button blue-button" type="submit">Подписаться</button>
           </form>
@@ -192,7 +192,7 @@
             <p class="field-group">
               <label class="date" for="date-until">Дата выезда:</label>
               <input class="choosing-date-form-field" type="text" id="date-until" name="date-until"
-                placeholder="1 сентября 2023" value="1 сентября 2021" required>
+                placeholder="1 сентября 2023" value="1 сентября 2023" required>
                 <span class="modal-message">На эти даты есть свободные номера. Пока есть.</span>
             </p>
             <p class="field-group small-field-wrapper">
@@ -202,7 +202,7 @@
                 <span class="visually-hidden">Уменшить количество</span>
               </button>
               <input class="choosing-date-form-field small-field" type="number" id="adults" name="adults"
-                placeholder="1" value="2">
+                placeholder="1" value="2" min="1">
               <button class="modal-button plus-button" type="button">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none"><path fill-rule="evenodd" d="M14 6H8V0H6v6H0v2h6v6h2V8h6V6Z"/></svg>
                 <span class="visually-hidden">Увеличить количество</span>
@@ -222,7 +222,7 @@
                 <span class="visually-hidden">Уменшить количество</span>
               </button>
               <input class="choosing-date-form-field small-field" type="number" id="kids" name="kids" placeholder="1"
-                value="2">
+                value="2" min="0">
               <button class="modal-button plus-button" type="button">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none"><path fill-rule="evenodd" d="M14 6H8V0H6v6H0v2h6v6h2V8h6V6Z"/></svg>
                 <span class="visually-hidden">Увеличить количество</span>
