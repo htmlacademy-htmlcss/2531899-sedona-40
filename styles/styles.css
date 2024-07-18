@@ -19,7 +19,7 @@ html {
 }
 
 body {
-  font-family: 'PT Sans', 'Arial', sans-serif;
+  font-family: "PT Sans", "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 22px;
@@ -71,7 +71,8 @@ body {
   display: block;
 }
 
-.button:disabled {
+.button:disabled,
+.modal-button:disabled {
   background-color: rgba(229, 229, 229, 1);
   pointer-events: none;
 }
@@ -136,6 +137,7 @@ button[type="reset"]:active {
 
 button[type="reset"]:disabled {
   color: rgba(255, 255, 255, 0.1);
+  background-color: transparent;
 }
 
 .search .button,
@@ -150,7 +152,7 @@ button[type="reset"]:disabled {
 .navigation {
   display: flex;
   padding: 0 70px;
-  gap: 30px;
+  gap: 28px;
   margin-bottom: -6px;
 }
 
@@ -240,6 +242,10 @@ button[type="reset"]:disabled {
   left: 16px;
 }
 
+.navigation-link-current:hover {
+  pointer-events: none;
+}
+
 .favourites {
   font-size: 10px;
   line-height: 10px;
@@ -255,11 +261,11 @@ button[type="reset"]:disabled {
 
 .hero {
   background-image: url("../images/hero-divider.svg"), url("../images/index-background.jpg");
-  background-color: lightblue;
+  background-color: #add8e6;
   background-repeat: no-repeat, no-repeat;
   background-position: center bottom, center;
   background-size: contain, cover;
-  padding: 51px 371px 82px 371px;
+  padding: 51px 371px 82px;
 }
 
 .hero img {
@@ -366,6 +372,10 @@ button[type="reset"]:disabled {
   display: flex;
 }
 
+.advantages-item-big img {
+  align-self: center;
+}
+
 .advantages-item-big:last-child {
   flex-direction: row-reverse;
 }
@@ -389,7 +399,6 @@ button[type="reset"]:disabled {
 .advantages-item:nth-child(even),
 .benefits-item:nth-child(odd) {
   background: rgba(131, 179, 211, 0.12);
-  ;
 }
 
 .advantages-item:nth-child(3n) {
@@ -434,13 +443,13 @@ button[type="reset"]:disabled {
 }
 
 .subscribe {
-  padding: 96px 258px 104px 258px;
+  padding: 96px 258px 104px;
   background-color: #ffffff;
   text-align: center;
 }
 
 .subscribe-index {
-  padding: 96px 258px 104px 258px;
+  padding: 96px 258px 104px;
   background-image: url("../images/subscribe-background.jpg");
   background-color: #5abaf7;
   background-repeat: no-repeat;
@@ -474,7 +483,7 @@ button[type="reset"]:disabled {
 
 .page-footer-container {
   display: flex;
-  padding: 45px 70px 30px 70px;
+  padding: 45px 70px 30px;
   justify-content: space-between;
   align-items: center;
 }
@@ -497,10 +506,7 @@ button[type="reset"]:disabled {
 
 .footer-navigation-icon {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
   margin: auto;
   fill: #83b3d3;
 }
@@ -545,7 +551,7 @@ button[type="reset"]:disabled {
 }
 
 .container {
-  padding: 35px 70px 70px 70px;
+  padding: 35px 70px 70px;
   margin: 0;
   background-image: url("../images/filter-background.jpg");
   background-color: #5abaf7;
@@ -569,6 +575,7 @@ button[type="reset"]:disabled {
   padding: 0;
   margin-bottom: 40px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 10px;
 }
@@ -605,7 +612,7 @@ button[type="reset"]:disabled {
 }
 
 .breadcrumbs-item:not(:last-child)::after {
-  content: '';
+  content: "";
   display: block;
   width: 7px;
   height: 10px;
@@ -632,7 +639,7 @@ button[type="reset"]:disabled {
 .catalog-filter-group:nth-child(1),
 .catalog-filter-group:nth-child(2) {
   min-width: 150px;
-  max-width: 180px;
+  max-width: 150px;
 }
 
 .control {
@@ -659,8 +666,9 @@ button[type="reset"]:disabled {
   opacity: 0.3;
 }
 
-.control-input:disabled + .control-mark {
+.control:has(:disabled) {
   opacity: 0.1;
+  pointer-events: none;
 }
 
 .control-input[type="checkbox"]:checked + .control-mark::before,
@@ -701,7 +709,7 @@ button[type="reset"]:disabled {
 .price-filter-wrapper {
   display: flex;
   gap: 2px;
-  margin-bottom: 46px;
+  margin-bottom: 44px;
 }
 
 .price-from,
@@ -775,6 +783,10 @@ input[name="price-max"] {
   outline: 2px solid #83b3d3;
 }
 
+.range-toggle:disabled {
+  pointer-events: none;
+}
+
 .toggle-min {
   top: -8px;
 }
@@ -787,11 +799,13 @@ input[name="price-max"] {
 .price-filter input::-webkit-outer-spin-button,
 .price-filter input::-webkit-inner-spin-button {
   -webkit-appearance: none;
+          appearance: none;
   margin: 0;
 }
 
 input[type="number"] {
-  appearance: textfield;
+  -webkit-appearance: textfield;
+          appearance: textfield;
 }
 
 .catalog-filter-list {
@@ -807,10 +821,10 @@ input[type="number"] {
   text-transform: capitalize;
   margin-bottom: 32px;
   overflow-wrap: break-word;
-  max-width: 230px;
+  max-width: 190px;
 }
 
-.catalog-filter-group label {
+.price-filter-wrapper label {
   font-size: 18px;
   line-height: 24px;
 }
@@ -819,7 +833,6 @@ input[type="number"] {
   font-size: 18px;
   line-height: 23px;
   overflow-wrap: break-word;
-  max-width: 230px;
 }
 
 .catalog-filter-item label:hover,
@@ -853,6 +866,7 @@ input[type="email"]:focus-visible {
 input[type="number"]:disabled,
 input[type="email"]:disabled {
   color: rgba(0, 0, 0, 0.3);
+  background-color: #f2f2f2;
   pointer-events: none;
 }
 
@@ -865,7 +879,7 @@ input[type="email"]:disabled {
 
 .catalog-header {
   display: flex;
-  margin: 50px 70px 40px 70px;
+  margin: 50px 70px 40px;
   gap: 70px;
   align-items: center;
 }
@@ -882,7 +896,8 @@ input[type="email"]:disabled {
   background-image: url("../images/search-results-arrow.svg");
   background-repeat: no-repeat;
   background-position: right 20px center;
-  appearance: none;
+  -webkit-appearance: none;
+          appearance: none;
 }
 
 .catalog-header select:hover {
@@ -909,6 +924,7 @@ input[type="email"]:disabled {
 
 .catalog-view-container {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
 }
 
@@ -990,7 +1006,9 @@ input[type="email"]:disabled {
 }
 
 .product-card p {
+  max-width: 140px;
   margin: 0;
+  overflow-wrap: break-word;
 }
 
 .product-card-image {
@@ -1048,43 +1066,51 @@ input[type="email"]:disabled {
 }
 
 .hotel-class.two-stars {
-  background-image: url("../images/rate-star-icon.svg"),
+  background-image:
+    url("../images/rate-star-icon.svg"),
     url("../images/rate-star-icon.svg");
   background-repeat: no-repeat;
-  background-position: left center,
+  background-position:
+    left center,
     24px center;
 }
 
 .hotel-class.three-stars {
-  background-image: url("../images/rate-star-icon.svg"),
+  background-image:
+    url("../images/rate-star-icon.svg"),
     url("../images/rate-star-icon.svg"),
     url("../images/rate-star-icon.svg");
   background-repeat: no-repeat;
-  background-position: left center,
+  background-position:
+    left center,
     24px center,
     48px center;
 }
 
 .hotel-class.four-stars {
-  background-image: url("../images/rate-star-icon.svg"),
+  background-image:
+    url("../images/rate-star-icon.svg"),
     url("../images/rate-star-icon.svg"),
     url("../images/rate-star-icon.svg"),
     url("../images/rate-star-icon.svg");
   background-repeat: no-repeat;
-  background-position: left center,
+  background-position:
+    left center,
     24px center,
     48px center,
     72px center;
 }
 
 .hotel-class.five-stars {
-  background-image: url("../images/rate-star-icon.svg"),
+  background-image:
+    url("../images/rate-star-icon.svg"),
     url("../images/rate-star-icon.svg"),
     url("../images/rate-star-icon.svg"),
     url("../images/rate-star-icon.svg"),
     url("../images/rate-star-icon.svg");
   background-repeat: no-repeat;
-  background-position: left center,
+  background-position:
+    left center,
     24px center,
     48px center,
     72px center,
@@ -1101,7 +1127,6 @@ input[type="email"]:disabled {
   border-radius: 4px;
   padding: 8px 22px 9px 20px;
   pointer-events: none;
-
 }
 
 .pagination-list {
@@ -1110,10 +1135,8 @@ input[type="email"]:disabled {
   padding: 0;
   margin: 0 70px;
   margin-bottom: 60px;
-}
-
-.pagination-item {
-  margin-right: 8px;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .pagination-link {
@@ -1167,7 +1190,7 @@ input[type="email"]:disabled {
   position: relative;
   margin: auto;
   padding: 64px 70px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-radius: 30px;
   box-shadow: 0 25px 50px 0 rgba(0, 0, 0, 0.15);
 }
@@ -1262,6 +1285,10 @@ input[type="email"]:disabled {
   border-radius: 4px;
   grid-column: 2 / 3;
   grid-row: 1 / 2;
+}
+
+.choosing-date-form-field:disabled {
+  pointer-events: none;
 }
 
 .date {
@@ -1370,7 +1397,7 @@ input[type="email"]:disabled {
 }
 
 .tooltip-text {
-  font-weight: normal;
+  font-weight: 400;
   text-transform: none;
   margin: 0;
   position: absolute;
