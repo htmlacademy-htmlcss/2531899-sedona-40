@@ -112,24 +112,24 @@ body {
   box-sizing: border-box;
 }
 
-button[type="reset"] {
+.button[type="reset"] {
   background: transparent;
   padding: 8px;
 }
 
-button[type="reset"]:hover {
+.button[type="reset"]:hover {
   color: rgba(255, 255, 255, 0.6);
 }
 
-button[type="reset"]:focus-visible {
+.button[type="reset"]:focus-visible {
   color: rgba(255, 255, 255, 1);
 }
 
-button[type="reset"]:active {
+.button[type="reset"]:active {
   color: rgba(255, 255, 255, 0.3);
 }
 
-button[type="reset"]:disabled {
+.button[type="reset"]:disabled {
   color: rgba(255, 255, 255, 0.1);
   background-color: transparent;
 }
@@ -743,11 +743,11 @@ button[type="reset"]:disabled {
   border: none;
 }
 
-input[name="price-min"] {
+.price-from-input {
   border-radius: 4px 0 0 4px;
 }
 
-input[name="price-max"] {
+.price-to-input {
   border-radius: 0 4px 4px 0;
 }
 
@@ -796,14 +796,17 @@ input[name="price-max"] {
   right: 0;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+.price-filter-wrapper input::-webkit-outer-spin-button,
+.small-field-wrapper input::-webkit-outer-spin-button,
+.price-filter-wrapper input::-webkit-inner-spin-button,
+.small-field-wrapper input::-webkit-inner-spin-button {
   -webkit-appearance: none;
           appearance: none;
   margin: 0;
 }
 
-input[type="number"] {
+.price-filter-wrapper input,
+.small-field-wrapper input {
   -webkit-appearance: textfield;
           appearance: textfield;
 }
@@ -848,7 +851,8 @@ input[type="number"] {
   margin-bottom: 16px;
 }
 
-input[type="number"],
+.price-filter-wrapper input,
+.small-field-wrapper input,
 .choosing-date-form-field {
   font-family: inherit;
   font-weight: 700;
@@ -856,15 +860,18 @@ input[type="number"],
   line-height: 24px;
 }
 
-input[type="number"]:hover,
-input[type="number"]:focus-visible,
-input[type="email"]:hover,
-input[type="email"]:focus-visible {
+.price-filter-wrapper input:hover,
+.small-field-wrapper input:hover,
+.price-filter-wrapper input:focus-visible,
+.small-field-wrapper input:focus-visible,
+.subscribe-form input[type="email"]:hover,
+.subscribe-form input[type="email"]:focus-visible {
   background-color: #e6e6e6;
 }
 
-input[type="number"]:disabled,
-input[type="email"]:disabled {
+.price-filter-wrapper input:disabled,
+.small-field-wrapper input:disabled,
+.subscribe-form input[type="email"]:disabled {
   color: rgba(0, 0, 0, 0.3);
   background-color: #f2f2f2;
   pointer-events: none;
@@ -891,7 +898,7 @@ input[type="email"]:disabled {
   border: none;
   border-radius: 4px;
   padding: 14px 20px;
-  width: 292px;
+  min-width: 292px;
   margin-left: auto;
   background-image: url("../images/search-results-arrow.svg");
   background-repeat: no-repeat;
@@ -924,8 +931,10 @@ input[type="email"]:disabled {
 
 .catalog-view-container {
   display: flex;
+  flex: none;
   flex-wrap: wrap;
   gap: 8px;
+  width: 160px;
 }
 
 .view {
@@ -1226,11 +1235,24 @@ input[type="email"]:disabled {
 .modal-button.plus-button:hover,
 .modal-button.minus-button:hover,
 .modal-close-button:focus-visible,
-.choosing-date-form-field:focus-visible,
-.modal-button.plus-button:focus-visible,
-.modal-button.minus-button:focus-visible {
+.choosing-date-form-field:focus-visible {
   background-color: #e6e6e6;
   z-index: 2;
+}
+
+.modal-button.plus-button:focus-visible,
+.modal-button.minus-button:focus-visible {
+  outline: none;
+}
+
+.modal-button:focus-visible svg {
+  padding: 3px;
+  outline: auto;
+}
+
+.modal-button.minus-button:focus-visible svg {
+  padding: 9px 3px;
+  outline: auto;
 }
 
 .modal-close-button:active {
