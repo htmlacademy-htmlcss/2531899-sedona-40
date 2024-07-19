@@ -1235,11 +1235,24 @@ body {
 .modal-button.plus-button:hover,
 .modal-button.minus-button:hover,
 .modal-close-button:focus-visible,
-.choosing-date-form-field:focus-visible,
-.modal-button.plus-button:focus-visible,
-.modal-button.minus-button:focus-visible {
+.choosing-date-form-field:focus-visible {
   background-color: #e6e6e6;
   z-index: 2;
+}
+
+.modal-button.plus-button:focus-visible,
+.modal-button.minus-button:focus-visible {
+  outline: none;
+}
+
+.modal-button:focus-visible svg {
+  padding: 3px;
+  outline: auto;
+}
+
+.modal-button.minus-button:focus-visible svg {
+  padding: 9px 3px;
+  outline: auto;
 }
 
 .modal-close-button:active {
